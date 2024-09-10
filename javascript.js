@@ -4,7 +4,6 @@ container.style.border = '3px solid black';
 
 let dim = 16;
 
-
 let createGrid = (dim) => {
     container.replaceChildren();
     for (let i=0; i<dim; i++) {
@@ -35,7 +34,6 @@ let populateGrid = (dim) => {
 
 createGrid(dim);
 populateGrid(dim);
-
 
 let increaseOpacity = (element) => {
     const newOpacity = +getComputedStyle(element).opacity + 0.1;
