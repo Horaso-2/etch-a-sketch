@@ -1,0 +1,14 @@
+.container {
+    height: 960px;
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 0px;
+}
