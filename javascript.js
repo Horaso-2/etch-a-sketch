@@ -22,7 +22,6 @@ let populateGrid = (dim) => {
         square.style.display = 'flex';
         square.style.width = `${square_dim}px`;
         square.style.height = `${square_dim}px`;
-        // square.style.flex = '';
         square.style.backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0");
 
         square.addEventListener('mouseover', () => {
@@ -60,7 +59,7 @@ let resetDimension = () => {
     let newDim = prompt('How big do you want a grid side to be?');
     dim = newDim;
     if (newDim > 100){
-        prompt('Grid side cannot exceed 100');
+        alert('Grid side cannot exceed 100');
         resetDimension();
     } else {
         createGrid(newDim);
@@ -81,7 +80,6 @@ btnResetDim.addEventListener('click', () => {
 btnClear.addEventListener('click', () => {
     clearGrid();
 })
-
 
 const buttons = document.createElement('div');
 buttons.style.display = 'flex';
