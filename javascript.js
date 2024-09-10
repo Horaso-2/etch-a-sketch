@@ -1,5 +1,4 @@
 const wrapper = document.querySelector('.content-wrapper');
-
 const container = document.querySelector('.container');
 container.style.border = '3px solid black';
 
@@ -43,17 +42,27 @@ let increaseOpacity = (element) => {
     element.style.opacity = `${newOpacity}`;
 }
 
-const header = document.createElement('div');
 const btnClear = document.createElement('button');
 const btnResetDim = document.createElement('button');
+
+let styleButtons = (button) => {
+    button.style.backgroundColor = 'white';
+    button.style.border = '3px solid black';
+    button.style.padding = '20px 30px';
+    button.style.borderRadius = '15px'
+}
+
+styleButtons(btnClear);
+styleButtons(btnResetDim);
 
 btnClear.textContent = 'Clear Grid';
 btnResetDim.textContent = 'Reset Grid Size';
 
 let resetDimension = () => {
-    newDim = prompt('New grid dimension?');
+    let newDim = prompt('How big do you want a grid side to be?');
+    dim = newDim;
     if (newDim > 100){
-        prompt('Dimension cannot exceed 100');
+        prompt('Grid side cannot exceed 100');
         resetDimension();
     } else {
         createGrid(newDim);
@@ -75,10 +84,15 @@ btnClear.addEventListener('click', () => {
     clearGrid();
 })
 
-wrapper.appendChild(header);
-// header.style.display = 'flex';
-// header.style.alignItems = 'center';
-// header.style.justifyContent = 'center';
-header.appendChild(btnResetDim);
-header.appendChild(btnClear);
+
+const buttons = document.createElement('div');
+buttons.style.display = 'flex';
+buttons.style.flexDirection = 'column';
+buttons.style.height = '200px';
+buttons.style.padding = '0 50px'
+buttons.style.justifyContent = 'space-evenly';
+buttons.appendChild(btnResetDim);
+buttons.appendChild(btnClear);
+wrapper.appendChild(buttons);
+
 
