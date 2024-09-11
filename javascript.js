@@ -53,7 +53,9 @@ styleButtons(btnClear);
 styleButtons(btnResetDim);
 
 btnClear.textContent = 'Clear Grid';
+btnClear.style.fontSize = '32px';
 btnResetDim.textContent = 'Reset Grid Size';
+btnResetDim.style.fontSize = btnClear.style.fontSize;
 
 let resetDimension = () => {
     let newDim = prompt('How big do you want a grid side to be?');
