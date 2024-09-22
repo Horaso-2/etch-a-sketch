@@ -57,11 +57,13 @@ btnClear.style.fontSize = '32px';
 btnResetDim.textContent = 'Reset Grid Size';
 btnResetDim.style.fontSize = btnClear.style.fontSize;
 
+
 let resetDimension = () => {
     let newDim = prompt('How big do you want a grid side to be?');
-    dim = newDim;
-    if (newDim > 100){
-        alert('Grid side cannot exceed 100');
+    dim = +newDim;
+
+    if (!(Number.isInteger(+newDim)) || newDim > 100 || newDim < 0) {
+        alert('Grid size has to be an integer between 0 and 100');
         resetDimension();
     } else {
         createGrid(newDim);
